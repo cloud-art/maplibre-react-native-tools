@@ -1,21 +1,20 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import type { LayerBaseProps } from "@maplibre/maplibre-react-native";
-import type { FC } from "react";
-import type { LayerRules, LayerStyle, LayerSymbolizer } from "../../../types";
+import type { LayerBaseProps } from '@maplibre/maplibre-react-native';
+import type { FC } from 'react';
+import type { LayerRules, LayerStyle, LayerSymbolizer } from '../../../types';
 
-import { memo, useMemo } from "react";
+import { memo, useMemo } from 'react';
 
-import { SymbolizerType } from "../../../types";
+import { SymbolizerType } from '../../../types';
 
 import {
   isLineSymbolizer,
   isPointSymbolizer,
   isPolygonSymbolizer,
-} from "../../../utils";
+} from '../../../utils';
 
-import { LineSymbolizer } from "../Line";
-import { PointSymbolizer } from "../Point";
-import { PolygonSymbolizer } from "../Polygon";
+import { LineSymbolizer } from '../Line';
+import { PointSymbolizer } from '../Point';
+import { PolygonSymbolizer } from '../Polygon';
 
 // #region Types
 export type SymbolizersProps = {
@@ -27,7 +26,7 @@ export type SymbolizersProps = {
 
 export type SymbolizerResolverProps = Pick<
   LayerRules,
-  "filter" | "maxZoom" | "minZoom"
+  'filter' | 'maxZoom' | 'minZoom'
 > & {
   symbol: LayerSymbolizer;
   style?: LayerStyle;
@@ -81,7 +80,7 @@ export const SymbolizerResolver = memo(function SymbolizerResolver({
 
   const SymbolComponent = useMemo(
     () => SYMBOL_COMPONENTS[symbol.type],
-    [symbol.type]
+    [symbol.type],
   );
 
   return (

@@ -1,9 +1,8 @@
-import type { LayerBaseProps } from "@maplibre/maplibre-react-native";
-import type { FC } from "react";
-import type { CircleLayerStyle } from "../../types";
+import type { LayerBaseProps } from '@maplibre/maplibre-react-native';
+import type { CircleLayerStyle } from '../../types';
 
-import MapLibreGL from "@maplibre/maplibre-react-native";
-import { memo } from "react";
+import MapLibreGL from '@maplibre/maplibre-react-native';
+import { memo } from 'react';
 
 // #region Types
 export type PointSymbolizerProps = {
@@ -11,21 +10,20 @@ export type PointSymbolizerProps = {
 } & LayerBaseProps;
 // #endregion
 
-export const PointSymbolizerRender: FC<PointSymbolizerProps> = ({
+export const PointSymbolizerRender = memo(function PointSymbolizer({
   style,
   ...props
-}) => {
+}: PointSymbolizerProps) {
   // #region Render
   if (
     style &&
-    "symbol" in style &&
+    'symbol' in style &&
     style.symbol &&
-    "iconImage" in style.symbol
+    'iconImage' in style.symbol
   ) {
     return <MapLibreGL.SymbolLayer {...props} style={style.symbol} />;
   }
 
   return <MapLibreGL.CircleLayer {...props} style={style?.circle} />;
   // #endregion
-};
-export const PointSymbolizer = memo(PointSymbolizerRender);
+});

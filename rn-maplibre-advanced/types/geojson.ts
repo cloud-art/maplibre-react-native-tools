@@ -1,4 +1,4 @@
-import type MapLibreGL from "@maplibre/maplibre-react-native";
+import type MapLibreGL from '@maplibre/maplibre-react-native';
 import type {
   BBox as BaseBBox,
   Feature as BaseFeature,
@@ -11,7 +11,7 @@ import type {
   Point as BasePoint,
   Polygon as BasePolygon,
   Position as BasePosition,
-} from "geojson";
+} from 'geojson';
 
 export enum SRID {
   EPSG_4326 = 4326,
@@ -19,7 +19,7 @@ export enum SRID {
   EPSG_3395 = 3395,
 }
 
-export type GeometryType = Pick<Geometry, "type">["type"];
+export type GeometryType = Pick<Geometry, 'type'>['type'];
 
 export type BBox = BaseBBox;
 export type Position = BasePosition;
@@ -51,9 +51,9 @@ export type FeatureProperties = { [name: string]: any } | null;
 
 export type Feature<
   G extends Geometry | null = Geometry,
-  P extends FeatureProperties = FeatureProperties
+  P extends FeatureProperties = FeatureProperties,
 > = BaseFeature<G, P>;
 export type FeatureCollection<
   G extends Geometry | null = Geometry,
-  P extends FeatureProperties = FeatureProperties
+  P extends FeatureProperties = FeatureProperties,
 > = BaseFeatureCollection<G, P>;

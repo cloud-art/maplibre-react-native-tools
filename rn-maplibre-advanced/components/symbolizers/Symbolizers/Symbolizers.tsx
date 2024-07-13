@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import type { LayerRules, LayerStyle } from "../../../types";
+import type { LayerRules, LayerStyle } from '../../../types';
 
-import { memo } from "react";
+import { memo } from 'react';
 
-import { SymbolizerResolver } from "./SymbolizerResolver";
+import { SymbolizerResolver } from './SymbolizerResolver';
 
 // #region Types
 export type SymbolizersProps = {
@@ -14,7 +13,7 @@ export type SymbolizersProps = {
 };
 // #endregion
 
-export const SymbolizersRender = memo(function Symbolizers({
+export const Symbolizers = memo(function Symbolizers({
   baseId,
   rules,
   sourceId,
@@ -24,7 +23,7 @@ export const SymbolizersRender = memo(function Symbolizers({
   return rules.map(({ name, filter, maxZoom, minZoom, symbolizers }) => {
     const symbolId = `${baseId}-${name}-symbolizer`;
 
-    return symbolizers?.map((symbol) => (
+    return symbolizers?.map(symbol => (
       <SymbolizerResolver
         key={symbolId}
         filter={filter}

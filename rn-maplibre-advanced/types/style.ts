@@ -4,8 +4,8 @@ import type {
   LineLayerStyle as BaseLineLayerStyle,
   SymbolLayerStyle as BaseSymbolLayerStyle,
   Expression,
-} from "@maplibre/maplibre-react-native";
-import type { Position } from "./geojson";
+} from '@maplibre/maplibre-react-native';
+import type { Position } from './geojson';
 
 export type ExpressionField =
   | string
@@ -41,31 +41,31 @@ export type LayerRules<S extends LayerStyle = LayerStyle> = {
 };
 
 export type Anchor =
-  | "center"
-  | "left"
-  | "right"
-  | "top"
-  | "bottom"
-  | "top-left"
-  | "top-right"
-  | "bottom-left"
-  | "bottom-right";
+  | 'center'
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'bottom'
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right';
 
 export enum Unit {
-  PIXEL = "pixel",
-  METRE = "meter",
-  FOOT = "foot",
+  PIXEL = 'pixel',
+  METRE = 'meter',
+  FOOT = 'foot',
 }
 
 export enum SymbolizerType {
-  POINT = "PointSymbolizer",
-  LINE = "LineSymbolizer",
-  POLYGON = "PolygonSymbolizer",
+  POINT = 'PointSymbolizer',
+  LINE = 'LineSymbolizer',
+  POLYGON = 'PolygonSymbolizer',
 }
 
 export interface Graphic {
   size: number;
-  type: "Graphic";
+  type: 'Graphic';
   anchor: Position;
   format: string;
   content: string;
@@ -75,17 +75,17 @@ export interface Graphic {
 }
 
 export interface Stroke {
-  type: "Stroke";
+  type: 'Stroke';
   opacity?: number;
   color?: string;
   width?: number;
-  linecap?: "butt" | "round" | "square";
-  linejoin?: "bevel" | "round" | "miter";
+  linecap?: 'butt' | 'round' | 'square';
+  linejoin?: 'bevel' | 'round' | 'miter';
   dasharray?: number[];
   dashoffset?: number;
 }
 export interface Fill {
-  type: "Fill";
+  type: 'Fill';
   graphic?: Graphic;
   opacity?: number;
   color?: string;
@@ -117,7 +117,7 @@ export type ISymbolizer =
   | IPolygonSymbolizer;
 
 export interface Rule {
-  type: "Rule";
+  type: 'Rule';
   name: string;
   max: number;
   min: number;
@@ -128,6 +128,6 @@ export interface Rule {
 
 export interface IStyle {
   name: string;
-  type: "FeatureTypeStyle";
+  type: 'FeatureTypeStyle';
   rules?: Rule[];
 }

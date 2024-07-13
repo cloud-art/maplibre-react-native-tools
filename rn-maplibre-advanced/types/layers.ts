@@ -5,13 +5,13 @@ import type {
   LineString,
   Point,
   Polygon,
-} from "./geojson";
+} from './geojson';
 import type {
   CircleLayerStyle,
   LayerStyle,
   LineLayerStyle,
   PolygonLayerStyle,
-} from "./style";
+} from './style';
 
 export enum LayerType {
   DATA,
@@ -37,7 +37,7 @@ export interface BaseLayer {
 export interface GeometryLayer<
   G extends Geometry | null = Geometry,
   P extends FeatureProperties = FeatureProperties,
-  S extends LayerStyle = LayerStyle
+  S extends LayerStyle = LayerStyle,
 > extends BaseLayer {
   collection: FeatureCollection<G, P>;
   params?: GeometryLayerParams<S>;

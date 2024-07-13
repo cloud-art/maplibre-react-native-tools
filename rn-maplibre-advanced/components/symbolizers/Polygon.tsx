@@ -1,9 +1,8 @@
-import type { LayerBaseProps } from "@maplibre/maplibre-react-native";
-import type { FC } from "react";
-import type { PolygonLayerStyle } from "../../types";
+import type { LayerBaseProps } from '@maplibre/maplibre-react-native';
+import type { PolygonLayerStyle } from '../../types';
 
-import MapLibreGL from "@maplibre/maplibre-react-native";
-import { memo } from "react";
+import MapLibreGL from '@maplibre/maplibre-react-native';
+import { memo } from 'react';
 
 // #region Types
 export type PolygonSymbolizerProps = {
@@ -11,11 +10,11 @@ export type PolygonSymbolizerProps = {
 } & LayerBaseProps;
 // #endregion
 
-const PolygonSymbolizerRender: FC<PolygonSymbolizerProps> = ({
+export const PolygonSymbolizerRender = memo(function PolygonSymbolizer({
   id,
   style,
   ...props
-}) => {
+}: PolygonSymbolizerProps) {
   // #region Render
   return (
     <>
@@ -29,5 +28,4 @@ const PolygonSymbolizerRender: FC<PolygonSymbolizerProps> = ({
     </>
   );
   // #endregion
-};
-export const PolygonSymbolizer = memo(PolygonSymbolizerRender);
+});
