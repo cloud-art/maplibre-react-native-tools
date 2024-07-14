@@ -10,7 +10,7 @@ export type PolygonSymbolizerProps = {
 } & LayerBaseProps;
 // #endregion
 
-export const PolygonSymbolizerRender = memo(function PolygonSymbolizer({
+export const PolygonSymbolizer = memo(function PolygonSymbolizer({
   id,
   style,
   ...props

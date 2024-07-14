@@ -10,7 +10,7 @@ export type PointSymbolizerProps = {
 } & LayerBaseProps;
 // #endregion
 
-export const PointSymbolizerRender = memo(function PointSymbolizer({
+export const PointSymbolizer = memo(function PointSymbolizer({
   style,
   ...props
 }: PointSymbolizerProps) {
