@@ -98,3 +98,24 @@ export const parseFill = (
         : color),
     fillOpacity: opacity,
   });
+
+export const getDefaultStyle = ({ visible }: { visible: boolean }) => ({
+  symbol: { visibility: visible ? 'visible' : 'none' },
+  circle: {
+    visibility: visible ? 'visible' : 'none',
+    circleStrokeWidth: 0.5,
+    circleStrokeColor: '#fff',
+    circleRadius: 3,
+    circleColor: '#445765',
+  },
+  fill: {
+    visibility: visible ? 'visible' : 'none',
+    fillOpacity: 0.5,
+    fillColor: '#765454',
+  },
+  line: {
+    visibility: visible ? 'visible' : 'none',
+    lineColor: '#000',
+    lineWidth: 1,
+  },
+});

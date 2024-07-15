@@ -1,21 +1,22 @@
 import type MapLibreGL from '@maplibre/maplibre-react-native';
 import type { Geometry } from 'geojson';
-import type { Feature, Position } from '../types';
+import type { CameraConfig, Feature, Position } from '../types';
 
 import { bbox } from '@turf/turf';
 import { useContext } from 'react';
-
-import { appConfig } from '@/common/config';
-import { MapContext } from '@/features/map';
+import { MapContext } from '../context';
 import { sleep } from '../utils';
 
 import { useLocation } from './location';
 
-// #region Config
-const { transitionDuration, zoom } = appConfig.map.camera;
+// #region Types
+export type UseMapConfigProps = CameraConfig;
 // #endregion
 
-export const useMapCamera = () => {
+export const useMapCamera = ({
+  transitionDuration = 350,
+  zoom = { step: 1, fractional: false, default: 11 },
+}: UseMapConfigProps) => {
   // #region Bindings
   const { cameraRef, mapViewRef } = useContext(MapContext)!;
   const { getUserLocation } = useLocation();

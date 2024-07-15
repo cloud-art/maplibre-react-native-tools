@@ -1,0 +1,7 @@
+{
+  "version": 8,
+  "name": "SmartLighting",
+  "sources": {},
+  "layers": [],
+  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf"
+}

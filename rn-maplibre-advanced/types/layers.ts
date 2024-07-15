@@ -8,6 +8,7 @@ import type {
 } from './geojson';
 import type {
   CircleLayerStyle,
+  LayerRules,
   LayerStyle,
   LineLayerStyle,
   PolygonLayerStyle,
@@ -58,6 +59,16 @@ export type LineGeometryLayer = GeometryLayer<
   LineLayerStyle
 >;
 
+export interface IDataLayer<
+  G extends Geometry | null = Geometry,
+  P extends FeatureProperties = FeatureProperties,
+  S extends LayerStyle = LayerStyle,
+> extends GeometryLayer<G, P> {
+  type: LayerType.DATA;
+  description?: string;
+  rules?: LayerRules<S>[];
+}
+
 export interface ITileLayer extends BaseLayer {
   type: LayerType.TILE;
   source: string;
@@ -65,4 +76,4 @@ export interface ITileLayer extends BaseLayer {
   size?: number;
 }
 
-export type MapLayer = ITileLayer;
+export type MapLayer = ITileLayer | IDataLayer;
