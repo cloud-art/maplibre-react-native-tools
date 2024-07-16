@@ -13,10 +13,15 @@ import { useLocation } from './location';
 export type UseMapConfigProps = CameraConfig;
 // #endregion
 
-export const useMapCamera = ({
-  transitionDuration = 350,
-  zoom = { step: 1, fractional: false, default: 11 },
-}: UseMapConfigProps) => {
+export const useMapCamera = (
+  {
+    transitionDuration = 350,
+    zoom = { step: 1, fractional: false, default: 11 },
+  }: UseMapConfigProps = {
+    transitionDuration: 350,
+    zoom: { step: 1, fractional: false, default: 11 },
+  },
+) => {
   // #region Bindings
   const { cameraRef, mapViewRef } = useContext(MapContext)!;
   const { getUserLocation } = useLocation();
