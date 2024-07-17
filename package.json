@@ -1,20 +1,14 @@
 {
   "name": "map-project",
   "version": "1.0.0",
-  "main": "expo/AppEntry.js",
+  "main": "index.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
     "eslint": "eslint ."
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
     "@maplibre/maplibre-react-native": "9.1.0",
     "@turf/turf": "7.0.0-alpha.114",
-    "expo": "~51.0.20",
-    "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-native": "0.74.3"
   },

@@ -29,12 +29,12 @@ MapLibreGL.setAccessToken(null);
 // #endregion
 
 // #region Types
-type MapProps = Omit<MapViewProps, 'onRegionDidChange'> & {
+type MapProps = {
   camera?: CameraProps;
   onRegionDidChange?: (event: MapEvents['onRegionDidChange']) => void;
   onRegionIsChange?: (event: MapEvents['onRegionIsChanging']) => void;
   onPress?: (event: MapEvents['onPress']) => void;
-};
+} & Omit<MapViewProps, 'onRegionDidChange'>;
 // #endregion
 
 const MapChildren = memo(function MapChildren({
