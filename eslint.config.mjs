@@ -6,14 +6,28 @@ import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-/** @type {import("eslint").Linter.FlatConfig[]} */
-export default [
-  ...tseslint.configs.recommended,
+export default tseslint.config(
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
   ...fixupConfigRules(pluginReactConfig),
   ...fixupConfigRules(prettierConfig),
-  pluginJs.configs.recommended,
   { ignores: ['node_modules', 'dist'] },
-  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+  {
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        globals: globals.browser,
+        project: ['./tsconfig.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
+    files: ['**/*.{js,jsx,mjs,cjs}'],
+    extends: tseslint.configs.disableTypeChecked,
+  },
   {
     plugins: { prettier: pluginPrettier },
     rules: {
@@ -23,4 +37,4 @@ export default [
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
   },
-];
+);
