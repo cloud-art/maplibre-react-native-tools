@@ -1,54 +1,57 @@
-import react from '@eslint-react/eslint-plugin';
-import eslint from '@eslint/js';
+import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import reactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
-import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import prettierPlugin from 'eslint-plugin-prettier';
+import eslintReact from 'eslint-plugin-react';
+import eslintReactHooks from 'eslint-plugin-react-hooks';
+import eslintReactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
-import tsEslint from 'typescript-eslint';
+import tseslint from 'typescript-eslint';
 
-export default tsEslint.config(
-  eslint.configs.recommended,
-  ...tsEslint.configs.recommendedTypeChecked,
+/** @type {import('eslint').Linter.FlatConfig[]} */
+export default tseslint.config(
   {
-    files: ['**/*.{js,ts,jsx,tsx,mjs,mts,cjs}'],
-    ignores: ['node_modules/*'],
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+      react: eslintReact,
+      'react-hooks': eslintReactHooks,
+      'react-refresh': eslintReactRefresh,
+      prettier: prettierPlugin,
+    },
   },
   {
-    files: ['**/*.{js,jsx,mjs,cjs}'],
-    extends: [tsEslint.configs.disableTypeChecked],
+    ignores: ['node_modules', 'eslint.config.js'],
   },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
-    files: ['eslint.config.mjs'],
     languageOptions: {
-      globals: globals.node,
+      globals: {
+        ...globals.node,
+        ...globals.es2025,
+      },
+      parserOptions: {
+        project: ['tsconfig.json'],
+      },
     },
   },
   {
     files: ['**/*.{ts,tsx}'],
-    ...react.configs['recommended-type-checked'],
-  },
-  reactRecommended,
-  reactJsxRuntime,
-  eslintConfigPrettier,
-  {
     rules: {
-      'react/boolean-prop-naming': [
-        'error',
-        {
-          validateNested: true,
-        },
+      ...prettierPlugin.configs.recommended.rules,
+      ...eslintConfigPrettier.rules,
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
       ],
+      'prefer-const': 'error',
       'react/destructuring-assignment': [
         'error',
         'always',
         { destructureInSignature: 'always' },
       ],
-      'react/function-component-definition': [
-        'error',
-        {
-          namedComponents: 'arrow-function',
-          unnamedComponents: 'arrow-function',
-        },
+      'react/jsx-curly-brace-presence': [
+        'warn',
+        { props: 'never', children: 'never' },
       ],
       'react/jsx-sort-props': [
         'error',
@@ -60,10 +63,10 @@ export default tsEslint.config(
           reservedFirst: true,
         },
       ],
-      'react/hook-use-state': ['error', { allowDestructuredState: true }],
-      'react/jsx-boolean-value': ['error', 'never'],
-      'react/jsx-key': ['error', { checkFragmentShorthand: true }],
-      '@typescript-eslint/no-import-type-side-effects': 'error',
+      'react/function-component-definition': [
+        'warn',
+        { namedComponents: 'arrow-function' },
+      ],
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
@@ -87,21 +90,8 @@ export default tsEslint.config(
           checksVoidReturn: false,
         },
       ],
-      'boundaries/element-types': 'off',
-    },
-    languageOptions: {
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        globals: globals.node,
-        project: ['./tsconfig.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
+      'react/self-closing-comp': ['error', { component: true, html: true }],
+      'max-params': ['error', 3],
     },
   },
 );
