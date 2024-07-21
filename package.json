@@ -1,9 +1,23 @@
 {
-  "name": "map-project",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@cloud-art/maplibre-react-native-tools",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "description": "Tools for maplibre react-native library",
   "scripts": {
     "eslint": "eslint ."
+  },
+  "keywords": [
+    "maps",
+    "ios",
+    "android",
+    "maplibre",
+    "react-native",
+    "mapbox"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloud-art/maplibre-react-native-tools.git"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
@@ -31,5 +45,9 @@
     "typescript": "^5.1.3",
     "typescript-eslint": "^7.16.0"
   },
-  "private": true
+  "bugs": {
+    "url": "https://github.com/cloud-art/maplibre-react-native-tools/issues"
+  },
+  "homepage": "https://github.com/cloud-art/maplibre-react-native-tools#readme",
+  "author": "cloud-art"
 }
