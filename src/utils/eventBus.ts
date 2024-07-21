@@ -1,6 +1,7 @@
 import type { BaseEventMap, MapEvents } from '../types';
 
 export const createEventBus = <Events extends BaseEventMap>() => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const listeners: Map<keyof Events, Set<(payload: any) => void> | undefined> =
     new Map();
 

@@ -1,15 +1,15 @@
-import type { Expression } from '@maplibre/maplibre-react-native';
-import type { ImageURISource } from 'react-native';
 import type {
   Anchor,
+  Expression,
   ExpressionField,
   Fill,
   Graphic,
   Position,
   Stroke,
-} from '../types';
+} from '@/types';
+import type { ImageURISource } from 'react-native';
 
-import { MAX_ZOOM_LEVEL, MIN_SCALE } from '../constants';
+import { MAX_ZOOM_LEVEL, MIN_SCALE } from '@/constants';
 import { stripUndefined } from './objects';
 
 export const interpolateZoom = (

@@ -91,7 +91,6 @@ export default tseslint.config(
         },
       ],
       'react/self-closing-comp': ['error', { component: true, html: true }],
-      'max-params': ['error', 3],
     },
   },
 );

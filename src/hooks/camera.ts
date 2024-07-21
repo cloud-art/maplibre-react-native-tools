@@ -1,12 +1,12 @@
-import type MapLibreGL from '@maplibre/maplibre-react-native';
+import type { CameraConfig, Feature, Position } from '@/types';
 import type { Geometry } from 'geojson';
-import type { CameraConfig, Feature, Position } from '../types';
 
+import { MapContext } from '@/context';
+import { sleep } from '@/utils';
 import { bbox } from '@turf/turf';
 import { useContext } from 'react';
-import { MapContext } from '../context';
-import { sleep } from '../utils';
 
+import type { CameraRef } from '@maplibre/maplibre-react-native';
 import { useLocation } from './location';
 
 // #region Types
@@ -29,7 +29,7 @@ export const useMapCamera = (
 
   // #region Methods
   // #region Camera
-  const fitBounds: MapLibreGL.Camera['fitBounds'] = (
+  const fitBounds: CameraRef['fitBounds'] = (
     northEastCoordinates,
     southWestCoordinates,
     padding,
@@ -54,13 +54,13 @@ export const useMapCamera = (
     const extent = bbox(feature);
     fitBounds([extent[0], extent[1]], [extent[2], extent[3]], [0, 20]);
   };
-  const flyTo: MapLibreGL.Camera['flyTo'] = (
+  const flyTo: CameraRef['flyTo'] = (
     coordinates,
     duration = transitionDuration,
   ) => {
     cameraRef.current?.flyTo(coordinates, duration);
   };
-  const moveTo: MapLibreGL.Camera['moveTo'] = (
+  const moveTo: CameraRef['moveTo'] = (
     coordinates: Position,
     duration = transitionDuration,
   ) => {

@@ -1,5 +1,9 @@
-import type { ShapeSourceProps } from '@maplibre/maplibre-react-native';
-import type { GeometryLayer, LayerRules, LayerStyle } from '../../types';
+import type {
+  GeometryLayer,
+  LayerRules,
+  LayerStyle,
+  ShapeSourceProps,
+} from '@/types';
 
 import MapLibreGL from '@maplibre/maplibre-react-native';
 import { memo, useMemo } from 'react';
@@ -48,6 +52,7 @@ export const GeoJSONLayer = memo(function GeoJSONLayer({
           maxZoomLevel={params?.maxZoom}
           minZoomLevel={params?.minZoom}
           sourceID={sourceId}
+          // @ts-expect-error casting type
           style={style}
         />
         <PointSymbolizer
@@ -55,6 +60,7 @@ export const GeoJSONLayer = memo(function GeoJSONLayer({
           maxZoomLevel={params?.maxZoom}
           minZoomLevel={params?.minZoom}
           sourceID={sourceId}
+          // @ts-expect-error casting type
           style={style}
         />
       </>

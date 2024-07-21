@@ -1,31 +1,33 @@
 import type {
   CameraProps,
-  MapViewProps,
+  Feature,
+  MapEvents,
+  Point,
   RegionPayload,
-} from '@maplibre/maplibre-react-native';
-import type { Feature, MapEvents, Point, VisibleRegion } from '../types';
+  VisibleRegion,
+} from '@/types';
+import type { CameraRef, MapViewRef } from '@maplibre/maplibre-react-native';
 
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import { MapContext } from '@/context';
+import { expandBboxByOneZoom, mapEvents, positionToBbox } from '@/utils';
+import MapLibreGL, { Camera, MapView } from '@maplibre/maplibre-react-native';
 import {
   memo,
   useCallback,
   useContext,
   useEffect,
-  useId,
   useMemo,
   useRef,
 } from 'react';
 import { StyleSheet } from 'react-native';
-
-import { MapContext } from '../context';
-import { expandBboxByOneZoom, mapEvents, positionToBbox } from '../utils';
 import { MapDefaultFeatures } from './features';
 
-import mapStyle from '../mapStyle.json';
+import mapStyle from '@/mapStyle.json';
+import type { MapViewProps } from '@/types';
 import { MapControls } from './controls';
 
 // #region Config
-MapLibreGL.setAccessToken(null);
+void MapLibreGL.setAccessToken(null);
 // #endregion
 
 // #region Types
@@ -45,10 +47,6 @@ const MapChildren = memo(function MapChildren({
   children,
   ...props
 }: MapProps) {
-  // #region Constants
-  const mapId = useId();
-  // #endregion
-
   // #region Bindings
   const { mapViewRef, cameraRef } = useContext(MapContext)!;
   // #endregion
@@ -113,8 +111,7 @@ const MapChildren = memo(function MapChildren({
 
   // #region Render
   return (
-    <MapLibreGL.MapView
-      id={mapId}
+    <MapView
       ref={mapViewRef}
       attributionEnabled={false}
       compassEnabled={false}
@@ -127,19 +124,19 @@ const MapChildren = memo(function MapChildren({
       onRegionIsChanging={handleRegionIsChanging}
       {...props}
     >
-      <MapLibreGL.Camera ref={cameraRef} maxZoomLevel={20} {...camera} />
+      <Camera ref={cameraRef} maxZoomLevel={20} {...camera} />
 
       {children}
       <MapDefaultFeatures />
       <MapControls />
-    </MapLibreGL.MapView>
+    </MapView>
   );
   // #endregion
 });
 
 export const Map = memo(function Map({ ...props }: MapProps) {
-  const cameraRef = useRef<MapLibreGL.Camera>(null);
-  const mapViewRef = useRef<MapLibreGL.MapView>(null);
+  const cameraRef = useRef<CameraRef>(null);
+  const mapViewRef = useRef<MapViewRef>(null);
 
   return (
     <MapContext.Provider value={{ cameraRef, mapViewRef }}>

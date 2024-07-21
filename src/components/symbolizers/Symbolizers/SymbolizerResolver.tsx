@@ -1,16 +1,20 @@
-import type { LayerBaseProps } from '@maplibre/maplibre-react-native';
+import type {
+  BaseLayerProps,
+  LayerRules,
+  LayerStyle,
+  LayerSymbolizer,
+} from '@/types';
 import type { FC } from 'react';
-import type { LayerRules, LayerStyle, LayerSymbolizer } from '../../../types';
 
 import { memo, useMemo } from 'react';
 
-import { SymbolizerType } from '../../../types';
+import { SymbolizerType } from '@/types';
 
 import {
   isLineSymbolizer,
   isPointSymbolizer,
   isPolygonSymbolizer,
-} from '../../../utils';
+} from '@/utils';
 
 import { LineSymbolizer } from '../Line';
 import { PointSymbolizer } from '../Point';
@@ -37,13 +41,10 @@ export type SymbolizerResolverProps = Pick<
 
 const SYMBOL_COMPONENTS: Record<
   SymbolizerType,
-  FC<LayerBaseProps & { style?: LayerStyle }>
+  FC<BaseLayerProps & { style?: LayerStyle }>
 > = {
-  // @ts-expect-error
   [SymbolizerType.LINE]: LineSymbolizer,
-  // @ts-expect-error
   [SymbolizerType.POINT]: PointSymbolizer,
-  // @ts-expect-error
   [SymbolizerType.POLYGON]: PolygonSymbolizer,
 };
 
@@ -59,21 +60,21 @@ export const SymbolizerResolver = memo(function SymbolizerResolver({
   const styles = useMemo<LayerStyle | undefined>(() => {
     if (isPointSymbolizer(symbol))
       return {
-        // @ts-expect-error
+        // @ts-expect-error casting type
         circle: { ...style?.circle, ...symbol.style?.circle },
-        // @ts-expect-error
+        // @ts-expect-error casting type
         symbol: { ...style?.symbol, ...symbol.style?.symbol },
       };
     if (isPolygonSymbolizer(symbol))
       return {
-        // @ts-expect-error
+        // @ts-expect-error casting type
         line: { ...style.line, ...symbol.style?.line },
-        // @ts-expect-error
+        // @ts-expect-error casting type
         fill: { ...style.fill, ...symbol.style?.fill },
       };
     if (isLineSymbolizer(symbol))
       return {
-        // @ts-expect-error
+        // @ts-expect-error casting type
         line: { ...style.line, ...symbol.style?.line },
       };
   }, [style, symbol]);

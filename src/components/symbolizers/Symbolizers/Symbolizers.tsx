@@ -1,4 +1,4 @@
-import type { LayerRules, LayerStyle } from '../../../types';
+import type { LayerRules, LayerStyle } from '@/types';
 
 import { memo } from 'react';
 

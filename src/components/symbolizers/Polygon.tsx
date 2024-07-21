@@ -1,5 +1,4 @@
-import type { LayerBaseProps } from '@maplibre/maplibre-react-native';
-import type { PolygonLayerStyle } from '../../types';
+import type { BaseLayerProps, PolygonLayerStyle } from '@/types';
 
 import MapLibreGL from '@maplibre/maplibre-react-native';
 import { memo } from 'react';
@@ -7,7 +6,7 @@ import { memo } from 'react';
 // #region Types
 export type PolygonSymbolizerProps = {
   style?: PolygonLayerStyle;
-} & LayerBaseProps;
+} & BaseLayerProps;
 // #endregion
 
 export const PolygonSymbolizer = memo(function PolygonSymbolizer({

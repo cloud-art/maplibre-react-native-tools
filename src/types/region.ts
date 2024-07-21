@@ -1,4 +1,10 @@
-import { BBox, Feature, FeatureProperties, Point, Position } from './geojson';
+import type {
+  BBox,
+  Feature,
+  FeatureProperties,
+  Point,
+  Position,
+} from './geojson';
 
 export interface RegionProperties extends NonNullable<FeatureProperties> {
   zoomLevel: number;

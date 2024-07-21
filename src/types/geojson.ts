@@ -47,6 +47,7 @@ export type Geometry =
   | MultiPolygon
   | GeometryCollection;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type FeatureProperties = { [name: string]: any } | null;
 
 export type Feature<

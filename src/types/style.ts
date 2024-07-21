@@ -3,9 +3,9 @@ import type {
   FillLayerStyle as BaseFillLayerStyle,
   LineLayerStyle as BaseLineLayerStyle,
   SymbolLayerStyle as BaseSymbolLayerStyle,
-  Expression,
 } from '@maplibre/maplibre-react-native';
 import type { Position } from './geojson';
+import type { Expression } from './maplibre';
 
 export type ExpressionField =
   | string

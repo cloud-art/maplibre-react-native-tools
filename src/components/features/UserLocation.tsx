@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
-import MapLibreGL, { UserLocationProps } from '@maplibre/maplibre-react-native';
+import type { UserLocationProps } from '@/types';
+import MapLibreGL from '@maplibre/maplibre-react-native';
 
 export const UserLocation: FC<UserLocationProps> = ({ ...props }) => {
   // #region Render

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 export default function isPlainObject(value: unknown): value is object {
   if (typeof value !== 'object' || value === null) return false;
 
@@ -11,7 +10,6 @@ export default function isPlainObject(value: unknown): value is object {
 
   return proto === baseProto;
 }
-/* eslint-enable @typescript-eslint/no-unsafe-assignment */
 
 export const mapEntries = <
   T extends object,

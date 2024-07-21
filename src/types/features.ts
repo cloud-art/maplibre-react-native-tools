@@ -1,4 +1,4 @@
-import { Feature, FeatureCollection, GeometryType } from './geojson';
+import type { Feature, FeatureCollection, GeometryType } from './geojson';
 
 export type GeometryToolHandle = {
   getValue: () =>

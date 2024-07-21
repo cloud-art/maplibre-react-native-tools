@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { useState } from 'react';
 
+import { useMapCamera } from '@/hooks';
 import { Button, View } from 'react-native';
-import { useMapCamera } from '../../hooks';
 
 export const MapZoomControl: FC = () => {
   // #region Bindings
@@ -32,8 +32,8 @@ export const MapZoomControl: FC = () => {
   // #region Render
   return (
     <View style={{ display: 'flex', flexDirection: 'column' }}>
-      <Button title="In" onPress={handleZoomIn}></Button>
-      <Button title="Out" onPress={handleZoomOut}></Button>
+      <Button title="In" onPress={handleZoomIn} />
+      <Button title="Out" onPress={handleZoomOut} />
     </View>
   );
   // #endregion

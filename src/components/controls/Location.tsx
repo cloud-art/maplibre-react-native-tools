@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
+import { useMapCamera } from '@/hooks';
 import { Button } from 'react-native';
-import { useMapCamera } from '../../hooks';
 
 export const MapLocationControl: FC = () => {
   // #region Bindings

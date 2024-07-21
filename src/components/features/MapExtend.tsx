@@ -1,8 +1,8 @@
 import type { PropsWithChildren } from 'react';
 
+import { MAP_FEATURES_PORTAL_HOST_NAME } from '@/constants';
 import { Portal, PortalHost } from '@gorhom/portal';
 import { memo } from 'react';
-import { MAP_FEATURES_PORTAL_HOST_NAME } from '../../constants';
 
 export const MapDefaultFeatures = memo(function MapDefaultFeatures() {
   //#region Render

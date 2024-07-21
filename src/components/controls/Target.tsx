@@ -1,10 +1,10 @@
+import type { Feature, GeometryToolHandle, Point } from '@/types';
 import type { ForwardRefRenderFunction } from 'react';
 import {
   View,
   type LayoutChangeEvent,
   type LayoutRectangle,
 } from 'react-native';
-import type { Feature, GeometryToolHandle, Point } from '../../types';
 
 import { point } from '@turf/turf';
 
@@ -18,7 +18,7 @@ import {
   useState,
 } from 'react';
 
-import { MapContext } from '../../context';
+import { MapContext } from '@/context';
 import { MapExtendControls } from './DefaultControls';
 
 export type MapControlTargetProps = {
@@ -100,9 +100,9 @@ const MapControlTargetRender: ForwardRefRenderFunction<
               width: 17,
               borderRadius: '100%',
             }}
-          ></View>
+          />
         </View>
-        <View style={{ backgroundColor: 'black', height: 18, width: 2 }}></View>
+        <View style={{ backgroundColor: 'black', height: 18, width: 2 }} />
         <View
           style={{
             backgroundColor: 'black',
@@ -111,7 +111,7 @@ const MapControlTargetRender: ForwardRefRenderFunction<
             marginTop: -2,
             borderRadius: '100%',
           }}
-        ></View>
+        />
       </View>
     </MapExtendControls>
   );

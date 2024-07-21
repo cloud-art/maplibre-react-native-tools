@@ -1,4 +1,4 @@
-import type { OnPressEvent } from '@maplibre/maplibre-react-native';
+import type OnPressEvent from '@maplibre/maplibre-react-native/javascript/types/OnPressEvent';
 import type { Feature, Point } from './geojson';
 import type { Region, VisibleRegion } from './region';
 

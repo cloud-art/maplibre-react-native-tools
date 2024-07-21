@@ -1,12 +1,12 @@
-import type { OnPressEvent } from '@maplibre/maplibre-react-native';
-import type { IDataLayer, LayerPressPayload } from '../../types';
+import type { IDataLayer, LayerPressPayload } from '@/types';
 
 import { memo, useCallback, useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 
 import { GeoJSONLayer } from '../geometry';
 
-import { getDefaultStyle, mapEvents } from '../../utils';
+import { getDefaultStyle, mapEvents } from '@/utils';
+import type OnPressEvent from '@maplibre/maplibre-react-native/javascript/types/OnPressEvent';
 
 // #region Types
 export type DataLayerProps = {
@@ -48,6 +48,7 @@ export const DataLayer = memo(function DataLayer({
     <GeoJSONLayer
       layer={layer}
       rules={rules}
+      // @ts-expect-error casting type
       style={styles}
       onPress={handlePress}
     />

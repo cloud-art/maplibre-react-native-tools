@@ -1,5 +1,4 @@
-import type { LayerBaseProps } from '@maplibre/maplibre-react-native';
-import type { CircleLayerStyle } from '../../types';
+import type { BaseLayerProps, CircleLayerStyle } from '@/types';
 
 import MapLibreGL from '@maplibre/maplibre-react-native';
 import { memo } from 'react';
@@ -7,7 +6,7 @@ import { memo } from 'react';
 // #region Types
 export type PointSymbolizerProps = {
   style?: CircleLayerStyle;
-} & LayerBaseProps;
+} & BaseLayerProps;
 // #endregion
 
 export const PointSymbolizer = memo(function PointSymbolizer({

@@ -5,7 +5,7 @@ import type {
   LineString,
   Point,
   Position,
-} from '../types';
+} from '@/types';
 
 import { booleanIntersects } from '@turf/boolean-intersects';
 import { buffer, distance, nearestPointOnLine } from '@turf/turf';
