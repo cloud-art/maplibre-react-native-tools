@@ -1,17 +1,10 @@
-// @ts-check
-
 import react from '@eslint-react/eslint-plugin';
-import { FlatCompat } from '@eslint/eslintrc';
 import eslint from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import reactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
 import globals from 'globals';
 import tsEslint from 'typescript-eslint';
-
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-});
 
 export default tsEslint.config(
   eslint.configs.recommended,
