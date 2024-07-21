@@ -22,6 +22,7 @@ import { expandBboxByOneZoom, mapEvents, positionToBbox } from '../utils';
 import { MapDefaultFeatures } from './features';
 
 import mapStyle from '../mapStyle.json';
+import { MapControls } from './controls';
 
 // #region Config
 MapLibreGL.setAccessToken(null);
@@ -108,7 +109,6 @@ const MapChildren = memo(function MapChildren({
       unsubscribe && unsubscribe();
     };
   }, []);
-
   // #endregion
 
   // #region Render
@@ -131,6 +131,7 @@ const MapChildren = memo(function MapChildren({
 
       {children}
       <MapDefaultFeatures />
+      <MapControls />
     </MapLibreGL.MapView>
   );
   // #endregion
