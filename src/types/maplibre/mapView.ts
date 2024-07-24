@@ -2,7 +2,7 @@ import type { Location } from '@maplibre/maplibre-react-native';
 import type BaseProps from '@maplibre/maplibre-react-native/javascript/types/BaseProps';
 import type { ReactNode } from 'react';
 import type { ViewProps } from 'react-native';
-import type { RegionPayload } from './RegionPayload';
+import type { RegionPayload } from './regionPayload';
 
 export interface MapViewProps extends BaseProps {
   /**
