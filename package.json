@@ -23,6 +23,7 @@
     "@gorhom/portal": "^1.0.14",
     "@maplibre/maplibre-react-native": "10.0.0-alpha.10",
     "@turf/turf": "7.0.0-alpha.114",
+    "babel-plugin-module-resolver": "^5.0.2",
     "react": "18.2.0",
     "react-native": "0.74.3"
   },
