@@ -48,6 +48,9 @@ const MapChildren = memo(function MapChildren({
   ...props
 }: MapProps) {
   // #region Bindings
+  mapEvents.subscribe('onPress', () => {
+    console.log('test');
+  });
   const { mapViewRef, cameraRef } = useContext(MapContext)!;
   // #endregion
 
