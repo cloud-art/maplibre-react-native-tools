@@ -1,11 +1,11 @@
+import type { ForwardRefRenderFunction } from 'react';
+import { forwardRef, memo, useImperativeHandle, useRef } from 'react';
 import type {
   Feature,
   GeometryToolHandle,
   LayerEditProps,
   LineString,
-} from '@/types';
-import type { ForwardRefRenderFunction } from 'react';
-import { forwardRef, memo, useImperativeHandle, useRef } from 'react';
+} from '../../../types';
 import { MapControlLine } from '../../controls';
 
 export type MapControlLineHandle = {

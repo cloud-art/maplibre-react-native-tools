@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { useState } from 'react';
 
-import { useMapCamera } from '@/hooks';
 import { Button, View } from 'react-native';
+import { useMapCamera } from '../../hooks';
 
 export const MapZoomControl: FC = () => {
   // #region Bindings

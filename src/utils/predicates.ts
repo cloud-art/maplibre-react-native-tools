@@ -7,9 +7,9 @@ import type {
   LayerSymbolizer,
   LineLayerStyle,
   PolygonLayerStyle,
-} from '@/types';
+} from '../types';
 
-import { SymbolizerType } from '@/types';
+import { SymbolizerType } from '../types';
 
 export const isPointSymbolizerScheme = (
   symbolizer: IBaseSymbolizer,

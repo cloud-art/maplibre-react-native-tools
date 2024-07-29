@@ -1,10 +1,10 @@
+import type { FC } from 'react';
 import type {
   CircleGeometryLayer,
   CircleLayerStyle,
   LayerRules,
   ShapeSourceProps,
-} from '@/types';
-import type { FC } from 'react';
+} from '../../types';
 
 import MapLibreGL from '@maplibre/maplibre-react-native';
 import { memo, useMemo } from 'react';

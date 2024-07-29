@@ -1,3 +1,4 @@
+import type { ImageURISource } from 'react-native';
 import type {
   Anchor,
   Expression,
@@ -6,10 +7,9 @@ import type {
   Graphic,
   Position,
   Stroke,
-} from '@/types';
-import type { ImageURISource } from 'react-native';
+} from '../types';
 
-import { MAX_ZOOM_LEVEL, MIN_SCALE } from '@/constants';
+import { MAX_ZOOM_LEVEL, MIN_SCALE } from '../constants';
 import { stripUndefined } from './objects';
 
 export const interpolateZoom = (

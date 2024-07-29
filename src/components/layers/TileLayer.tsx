@@ -1,5 +1,5 @@
-import type { ITileLayer } from '@/types';
 import type { RasterLayerStyle } from '@maplibre/maplibre-react-native';
+import type { ITileLayer } from '../../types';
 
 import MapLibreGL from '@maplibre/maplibre-react-native';
 import { memo, useMemo } from 'react';

@@ -1,4 +1,4 @@
-import type { BaseLayerProps, CircleLayerStyle } from '@/types';
+import type { BaseLayerProps, CircleLayerStyle } from '../../types';
 
 import MapLibreGL from '@maplibre/maplibre-react-native';
 import { memo } from 'react';

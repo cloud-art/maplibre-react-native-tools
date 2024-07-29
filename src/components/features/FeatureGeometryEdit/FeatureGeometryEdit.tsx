@@ -1,9 +1,9 @@
-import type { GeometryToolHandle } from '@/types';
 import type { ForwardRefRenderFunction } from 'react';
+import type { GeometryToolHandle } from '../../../types';
 
 import { forwardRef, memo } from 'react';
 
-import type { FeatureGeometryEditProps } from '@/types';
+import type { FeatureGeometryEditProps } from '../../../types';
 import { LineEdit } from './LineEdit';
 import { PointEdit } from './PointEdit';
 

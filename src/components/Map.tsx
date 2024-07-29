@@ -1,3 +1,4 @@
+import type { CameraRef, MapViewRef } from '@maplibre/maplibre-react-native';
 import type {
   CameraProps,
   Feature,
@@ -5,11 +6,8 @@ import type {
   Point,
   RegionPayload,
   VisibleRegion,
-} from '@/types';
-import type { CameraRef, MapViewRef } from '@maplibre/maplibre-react-native';
+} from '../types';
 
-import { MapContext } from '@/context';
-import { expandBboxByOneZoom, mapEvents, positionToBbox } from '@/utils';
 import MapLibreGL, { Camera, MapView } from '@maplibre/maplibre-react-native';
 import {
   memo,
@@ -20,10 +18,12 @@ import {
   useRef,
 } from 'react';
 import { StyleSheet } from 'react-native';
+import { MapContext } from '../context';
+import { expandBboxByOneZoom, mapEvents, positionToBbox } from '../utils';
 import { MapDefaultFeatures } from './features';
 
-import mapStyle from '@/mapStyle.json';
-import type { MapViewProps } from '@/types';
+import mapStyle from '../mapStyle.json';
+import type { MapViewProps } from '../types';
 import { MapControls } from './controls';
 
 // #region Config
