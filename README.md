@@ -10,7 +10,7 @@ This package currently installing privately, and you have to create `.npmrc` fil
 
 ### Use package manager to install
 
-run to install via npm:
+Run to install via npm:
 ```
 npm install cloud-art/maplibre-react-native-tools
 ```
