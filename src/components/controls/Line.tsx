@@ -1,3 +1,4 @@
+import type { ForwardRefRenderFunction } from 'react';
 import type {
   CircleGeometryLayer,
   Feature,
@@ -6,8 +7,7 @@ import type {
   LineGeometryLayer,
   LineString,
   Point,
-} from '@/types';
-import type { ForwardRefRenderFunction } from 'react';
+} from '../../types';
 
 import { lineString, point } from '@turf/turf';
 import {
@@ -21,12 +21,15 @@ import {
   useState,
 } from 'react';
 
-import { MapContext } from '@/context';
+import { MapContext } from '../../context';
 
 import { CircleLayer, LineLayer } from '../geometry';
 
-import { LINE_BUILDER_LINE_LAYER, LINE_BUILDER_POINT_LAYER } from '@/constants';
-import { mapEvents, snapTo } from '@/utils';
+import {
+  LINE_BUILDER_LINE_LAYER,
+  LINE_BUILDER_POINT_LAYER,
+} from '../../constants';
+import { mapEvents, snapTo } from '../../utils';
 import { MapExtendFeatures } from '../features';
 import { MapControlTarget } from './Target';
 

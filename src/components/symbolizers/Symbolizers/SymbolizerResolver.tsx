@@ -1,20 +1,20 @@
+import type { FC } from 'react';
 import type {
   BaseLayerProps,
   LayerRules,
   LayerStyle,
   LayerSymbolizer,
-} from '@/types';
-import type { FC } from 'react';
+} from '../../../types';
 
 import { memo, useMemo } from 'react';
 
-import { SymbolizerType } from '@/types';
+import { SymbolizerType } from '../../../types';
 
 import {
   isLineSymbolizer,
   isPointSymbolizer,
   isPolygonSymbolizer,
-} from '@/utils';
+} from '../../../utils';
 
 import { LineSymbolizer } from '../Line';
 import { PointSymbolizer } from '../Point';

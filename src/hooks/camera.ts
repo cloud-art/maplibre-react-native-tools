@@ -1,10 +1,10 @@
-import type { CameraConfig, Feature, Position } from '@/types';
 import type { Geometry } from 'geojson';
+import type { CameraConfig, Feature, Position } from '../types';
 
-import { MapContext } from '@/context';
-import { sleep } from '@/utils';
 import { bbox } from '@turf/turf';
 import { useContext } from 'react';
+import { MapContext } from '../context';
+import { sleep } from '../utils';
 
 import type { CameraRef } from '@maplibre/maplibre-react-native';
 import { useLocation } from './location';

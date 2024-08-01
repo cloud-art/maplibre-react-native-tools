@@ -1,11 +1,11 @@
+import type { ForwardRefRenderFunction } from 'react';
 import type {
   CircleGeometryLayer,
   Feature,
   GeometryToolHandle,
   LayerEditProps,
   Point,
-} from '@/types';
-import type { ForwardRefRenderFunction } from 'react';
+} from '../../../types';
 
 import {
   forwardRef,
@@ -23,7 +23,7 @@ import { MapExtendFeatures } from '../MapExtend';
 
 import { CircleLayer } from '../../geometry';
 
-import { mapEvents } from '@/utils';
+import { mapEvents } from '../../../utils';
 
 const PointEditRender: ForwardRefRenderFunction<
   GeometryToolHandle,

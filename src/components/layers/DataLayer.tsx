@@ -1,12 +1,12 @@
-import type { IDataLayer, LayerPressPayload } from '@/types';
+import type { IDataLayer, LayerPressPayload } from '../../types';
 
 import { memo, useCallback, useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 
 import { GeoJSONLayer } from '../geometry';
 
-import { getDefaultStyle, mapEvents } from '@/utils';
 import type OnPressEvent from '@maplibre/maplibre-react-native/javascript/types/OnPressEvent';
+import { getDefaultStyle, mapEvents } from '../../utils';
 
 // #region Types
 export type DataLayerProps = {

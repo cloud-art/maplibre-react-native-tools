@@ -3,7 +3,7 @@ import type {
   LayerRules,
   LayerStyle,
   ShapeSourceProps,
-} from '@/types';
+} from '../../types';
 
 import MapLibreGL from '@maplibre/maplibre-react-native';
 import { memo, useMemo } from 'react';

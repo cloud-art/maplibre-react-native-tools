@@ -2,8 +2,8 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { Portal, PortalHost } from '@gorhom/portal';
 
-import { MAP_CONTROLS_PORTAL_HOST_NAME } from '@/constants';
 import { View } from 'react-native';
+import { MAP_CONTROLS_PORTAL_HOST_NAME } from '../../constants';
 import { MapLocationControl } from './Location';
 import { MapZoomControl } from './Zoom';
 

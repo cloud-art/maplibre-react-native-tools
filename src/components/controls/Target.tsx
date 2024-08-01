@@ -1,10 +1,10 @@
-import type { Feature, GeometryToolHandle, Point } from '@/types';
 import type { ForwardRefRenderFunction } from 'react';
 import {
   View,
   type LayoutChangeEvent,
   type LayoutRectangle,
 } from 'react-native';
+import type { Feature, GeometryToolHandle, Point } from '../../types';
 
 import { point } from '@turf/turf';
 
@@ -18,7 +18,7 @@ import {
   useState,
 } from 'react';
 
-import { MapContext } from '@/context';
+import { MapContext } from '../../context';
 import { MapExtendControls } from './DefaultControls';
 
 export type MapControlTargetProps = {

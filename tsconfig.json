@@ -8,12 +8,8 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "paths": {
-      "@@/*": ["."],
-      "@/*": ["./src/*"]
-    },
     "noEmit": true
   },
-  "include": ["src", "babel.config.js", "eslint.config.mjs", "index.ts"],
+  "include": ["src", "eslint.config.mjs", "index.ts"],
   "exclude": ["node_modules"]
 }
